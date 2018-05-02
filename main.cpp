@@ -21,19 +21,19 @@ void setSpeed(int left, int right) {
 }
 
 //First gate:
-void openGate() {
-	char pass[24];
-	char addr [15] = {'1','3','0','.','1','9','5','.','6','.','1','9','6'};
-	char toSend [24] = {'p','l','e','a','s','e'};
-	connect_to_server(addr, 1024);
-	send_to_server(toSend);
-	receive_from_server(pass);
-	send_to_server(pass);
+void gate1() {
+	char password[24];
+	char IP_addr [15] = {'1','3','0','.','1','9','5','.','6','.','1','9','6'};
+	char send [24] = {'p','l','e','a','s','e'};
+	connect_to_server(IP_addr, 1024);
+	send_to_server(send);
+	receive_from_server(password);
+	send_to_server(password);
 }
 
 
 // white threshold to account for variations in lighting
-void updateWhiteThreshold() {
+void whiteMinUpdate() {
 	take_picture();
 	int totalWhite = 0;
 	//Loop through whole image
