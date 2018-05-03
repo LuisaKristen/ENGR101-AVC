@@ -67,6 +67,39 @@ double getLineErrorSignal(int rowStart, int rowEnd) {
 
 
 }
+void quadOne() {
+	openGate();
+	quad Two Loop();
+}
+int image_analysis() {
+	take_picture();
+	int sum = 0;
+	int w;
+	int s;
+	for( int =0; i<320; i++){
+		w = get_pixel( i, 120, 3);
+		if( W >127){
+			s=1;
+		}
+		else{
+			s=0;
+	}
+		sum = sum + (i-160)*s
+	}
+	return 0;
+}
+int get_ir(int pin){
+	int ir = 0;
+for( int i =0; i<5; i++){
+	ir = ir + read_analog( pin);
+}
+	return(ir/5);
+}
+int main(){
+	init();
+	sleep(15,0);
+	quadOne();}
+	
 
 
 
