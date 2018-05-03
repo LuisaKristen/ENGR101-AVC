@@ -37,9 +37,9 @@ void whiteMinUpdate() {
 	take_picture();
 	int totalWhite = 0;
 	//Loop through whole image
-	for (int r = 0; r < 240; r++) {
-		for (int c = 0; c < 320; c++) {
-			totalWhite += get_pixel(r, c, 3);
+	for (int row = 0; row < 240; row++) {
+		for (int col = 0; col < 320; col++) {
+			totalWhite += get_pixel(row, col, 3);
 		}
 	}
 
