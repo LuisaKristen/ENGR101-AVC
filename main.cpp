@@ -29,13 +29,7 @@ int hard_turn_right(int turn){ //hard turning for Q2 part where it is all sharp 
   sleep1(0,turn);
   forward();
 }
-#include <stdio.h>
-#include "E101.h"
 
-int main ()
-{
-	init();
-}
 
 void openGate() {
 	char[] ipAddr;
