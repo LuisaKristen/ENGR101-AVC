@@ -2,6 +2,12 @@
 #include <stdio.h>
 
 int forward(int speed){
+  if(speed>255){
+    speed=255;
+  }
+  if(speed<-255){
+    speed=-255; //127/-127?
+  }
   set_motor(1,speed);
   set_motor(2,speed);
 }
@@ -12,7 +18,7 @@ int stop(){
 
 int main(){
   init();
-  foward(50);
+  forward(50);
   sleep1(3,0);
   stop();
 
