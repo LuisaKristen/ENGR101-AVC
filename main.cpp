@@ -6,6 +6,8 @@ int forward(int left, int right){  //left and right to be decided by error size
   if(right>255){right=255;}
   if(left<-255){left=-255;}
   if(right<-255){right=-255;}
+  
+  right=right*-1 //wheels need to turn in opposite directions otherwise me have a burnout
   set_motor(1,left);
   set_motor(2,right);
 }
@@ -30,7 +32,7 @@ int hard_turn_right(int turn){ //hard turning for Q2 part where it is all sharp 
 
 void gate1() {
 	char password[24];
-	char IP_addr [15] = {};
+	char IP_addr [15] = {'1','0','.','1','4','0','.3','0','.,'1','5',',6'}; //Nathan's IP
 	char send [24] = {'p','l','e','a','s','e'};
 	connect_to_server(IP_addr, 1024);
 	send_to_server(send);
