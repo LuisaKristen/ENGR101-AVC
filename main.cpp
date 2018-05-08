@@ -18,14 +18,14 @@ int stop(){
 
 int hard_turn_left(int turn){ //hard turning for Q2 part where it is all sharp turns
   set_motor(1,0);
-  set_motor(2,127);
+  set_motor(2,127);	//not 127 holy shit it's fast
   sleep1(0,turn);
   forward();
 }
 
 int hard_turn_right(int turn){ //hard turning for Q2 part where it is all sharp turns
   set_motor(2,0);             //turn to be decided by error size
-  set_motor(1,127);
+  set_motor(1,127);	//not 127 holy shit it's fast
   sleep1(0,turn);
   forward();
 }
@@ -107,7 +107,7 @@ int getErrorSignal() {
 
 int main(){
   init();
-  forward(50);
+  forward(50,50);	//not 127 holy shit it's fast
   sleep1(3,0);
   hard_turn_right(100000);
   hard_turn_left(100000);
