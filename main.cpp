@@ -6,11 +6,11 @@ int forward(int left, int right){  //left and right to be decided by error size
   if(right>255){right=255;}
   if(left<-255){left=-255;}
   if(right<-255){right=-255;}
-  
-  right=right*-1 //wheels need to turn in opposite directions otherwise me have a burnout
+  right=right*-1 //wheels need to turn in opposite directions otherwise we have a burnout
   set_motor(1,left);
   set_motor(2,right);
 }
+
 int stop(){
   set_motor(1,0);
   set_motor(2,0);
