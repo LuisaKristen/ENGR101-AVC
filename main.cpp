@@ -43,7 +43,7 @@ void gate1() {
 
 void openGate() {
 	char[] ipAddr;
-	strcopy(ipAddr, "192.168.1.1".c_str()); 	//Convert string to character array (easier than declaring a character array with the IP address).
+	strcopy(ipAddr, "10.140.30.156".c_str()); 	//Convert string to character array (easier than declaring a character array with the IP address).
 	
 	char[] message;
 	strcopy(message, "please".c_string());
