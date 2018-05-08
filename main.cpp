@@ -30,6 +30,16 @@ int hard_turn_right(int turn){ //hard turning for Q2 part where it is all sharp 
   forward();
 }
 
+//figure out which gate code we're using
+void gate1() {
+	char password[24];
+	char IP_addr [15] = {'1','0','.','1','4','0','.3','0','.,'1','5',',6'}; //Nathan's IP
+	char send [24] = {'p','l','e','a','s','e'};
+	connect_to_server(IP_addr, 1024);
+	send_to_server(send);
+	receive_from_server(password);
+	send_to_server(password);
+}
 
 void openGate() {
 	char[] ipAddr;
@@ -93,17 +103,6 @@ int getErrorSignal() {
 	}
 	
 	return error / whitePixelCount;
-}
-
-
-void gate1() {
-	char password[24];
-	char IP_addr [15] = {'1','0','.','1','4','0','.3','0','.,'1','5',',6'}; //Nathan's IP
-	char send [24] = {'p','l','e','a','s','e'};
-	connect_to_server(IP_addr, 1024);
-	send_to_server(send);
-	receive_from_server(password);
-	send_to_server(password);
 }
 
 int main(){
