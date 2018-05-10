@@ -68,6 +68,7 @@ int getErrorSignal() {
 double previousError = 0; //Stores the value of the previous error signal
 double kp = 0.005; 
 double kd = 0.2;
+int time =  500000;
 int currentStep = 0; //Stores the current step (increments every loop)
 
 void go() {
@@ -83,8 +84,10 @@ void go() {
 	
 	set_motor(1, vLeft);
 	set_motor(2, vRight);
-	
+`	updateWhiteThreshold();
+	sleep1(0,time);
 }
+
 
 int quad = 1;
 
