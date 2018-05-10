@@ -95,10 +95,10 @@ int main() {
 	while (1) {
 		if (quad == 1) {
 			
-			if (isAtGate()) {
+			/*if (isAtGate()) {
 				openGate();
 				quad++;
-			}
+			}*/
 			
 			go();
 			
@@ -113,4 +113,6 @@ int main() {
 			
 		}
 	}
+	
+	return 0;
 }
