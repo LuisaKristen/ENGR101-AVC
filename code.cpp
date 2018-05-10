@@ -65,6 +65,11 @@ int getErrorSignal() {
 	return error / whitePixelCount;
 }
 
+double previousError = 0; //Stores the value of the previous error signal
+double kp = 0.005; 
+double kd = 0.2;
+int currentStep = 0; //Stores the current step (increments every loop)
+
 void go() {
 	int currentError = getErrorSignal();
 	double dv = currentError * kp + ((currentError - previousError) / ((time * currentStep) - (time * (currentStep - 1)))) * kd;
