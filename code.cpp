@@ -55,8 +55,6 @@ int getErrorSignal() {
 	for (int i = 0; i < 320; i++) {
 		int pixel = get_pixel(120, i, 3);
 		
-		error += (i - 160) * pixel;
-		
 		if (pixel > whiteThreshold) {
 			pixcel = 1;
 			whitePixelCount++;
@@ -64,6 +62,9 @@ int getErrorSignal() {
 		else {
 			pixel = 0;
 		}
+		
+		error += (i - 160) * pixel;
+		
 	}
 	
 	return error / whitePixelCount;
