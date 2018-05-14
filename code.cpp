@@ -56,7 +56,7 @@ int getErrorSignal() {
 		int pixel = get_pixel(120, i, 3);
 		
 		if (pixel > whiteThreshold) {
-			pixcel = 1;
+			pixel = 1;
 			whitePixelCount++;
 		}
 		else {
