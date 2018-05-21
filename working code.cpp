@@ -3,7 +3,7 @@
 
 void gate1() {
 	char password[24];
-	char IP_addr [15] = {'1','0','.','1','4','0','.3','0','.,'1','5',',6'}; //Nathan's IP
+	char IP_addr [15] = {'1','0','.','1','4','0','.','3','0','.','1','5',',6'}; //Nathan's IP
 	char send [24] = {'P','l','e','a','s','e'};
 	connect_to_server(IP_addr, 1024);
 	send_to_server(send);
