@@ -1,6 +1,17 @@
 #include <stdio.h>
 #include "E101.h"
 
+void gate1() {
+	char password[24];
+	char IP_addr [15] = {'1','0','.','1','4','0','.3','0','.,'1','5',',6'}; //Nathan's IP
+	char send [24] = {'P','l','e','a','s','e'};
+	connect_to_server(IP_addr, 1024);
+	send_to_server(send);
+	receive_from_server(password);
+	send_to_server(password);
+      sleep1(0,2000000;
+}
+
 double whiteThreshold;
 
 double updateWhiteThreshold() {
@@ -47,7 +58,8 @@ double getPropSignal() {
 int baseSpeed = 40;                                                                                                                                                                                                                                                            
                                                                                                                                                                                                                                                                                
 int main() {                                                                                                                                                                                                                                                                   
-        init();                                                                                                                                                                                                                                                                
+        init();   
+        gate1();
         updateWhiteThreshold();                                                                                                                                                                                                                                                
        while(1) {
                double propSignal =  getPropSignal();
