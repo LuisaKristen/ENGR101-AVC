@@ -9,7 +9,7 @@ void gate1() {
 	send_to_server(send);
 	receive_from_server(password);
 	send_to_server(password);
-      sleep1(0,2000000;
+      	sleep1(0,2000000);
 }
 
 double whiteThreshold;
@@ -61,14 +61,15 @@ int main() {
         init();   
         gate1();
         updateWhiteThreshold();                                                                                                                                                                                                                                                
-       while(1) {
+       	while(1) {
                double propSignal =  getPropSignal();
                double leftSpeed = baseSpeed + propSignal;
                double rightSpeed = baseSpeed - propSignal;
 
-                printf("left=%f right=%f\n", leftSpeed, -rightSpeed);
+               printf("left=%f right=%f\n", leftSpeed, -rightSpeed);
                set_motor(2, -leftSpeed);
                set_motor(1, -rightSpeed); 
        }
+	
 }
 
