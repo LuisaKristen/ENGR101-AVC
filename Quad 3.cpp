@@ -2,14 +2,14 @@
 #include "E101.h"
 
 void gate1() {
-	char password[24];
-	char IP_addr [15] = {'1','0','.','1','4','0','.','3','0','.','1','5',',6'}; //Nathan's IP
-	char send [24] = {'P','l','e','a','s','e'};
-	connect_to_server(IP_addr, 1024);
-	send_to_server(send);
-	receive_from_server(password);
-	send_to_server(password);
-      	sleep1(0,2000000);
+        char password[24];
+        char IP_addr [15] = {'1','3','0','.','1','9','5','.','6','.','1','9','6'}; //Nathan's IP
+        char send [24] = {'P','l','e','a','s','e'};
+        connect_to_server(IP_addr, 1024);
+        send_to_server(send);
+        receive_from_server(password);
+        send_to_server(password);
+        sleep1(0,2000000);
 }
 
 double whiteThreshold;
