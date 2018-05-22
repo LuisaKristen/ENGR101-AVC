@@ -90,20 +90,37 @@ void quad3 (){
   }
   else if (rightCorner==true){
           printf("Right Corner");
-          turn_right(); //write turn left
+          turn_right(100000); //write turn left
           rightCorner=false;
           
   }
   else if (leftCorner==true){
           printf("Left Corner");
-          turn_left(); //write turn left
+          turn_left(100000); //write turn left
           leftCorner=false;
   }
 }
 }
  
- void turn_left(){}
- void turn_right(){}
+ void turn_left(int turn){
+	 set_motor(1,30);
+  	 set_motor(2,30);
+	  sleep1(0,turn/2);}
+
+	 set_motor(1,0);
+  	 set_motor(2,-30);	
+  	 sleep1(0,turn);
+}
+
+ void turn_right(int turn){
+ 	set_motor(1,30);
+  	 set_motor(2,30);
+	  sleep1(0,turn/2);}
+
+	 set_motor(1,-30);
+  	 set_motor(2,30);	
+  	 sleep1(0,turn);
+ }
  
 int baseSpeed = 40;                                                                                                                                                                                                                                                            
 int main() {                                                                                                                                                                                                                                                                   
