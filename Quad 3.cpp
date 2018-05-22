@@ -71,37 +71,7 @@ double getPropSignal() {
       return error * kp;                                                                                                                                                                                                                                                       
 }  
 
-int numOfTurns=0;                                                                                                                                                                                                                                                                               
 
-void quad3 (){
-  while (count>5){
-      double propSignal =  getPropSignal();
-      double leftSpeed = (baseSpeed + propSignal)/2;
-      double rightSpeed = (baseSpeed - propSignal)/2;
-
-       set_motor(2, -leftSpeed);
-       set_motor(1, -rightSpeed); 
-  if (TIntersect==true){
-        printf("T Intersection");
-        numOfTurns++;
-        turn_left(); //write turn left
-        TIntersect=false;
-
-  }
-  else if (rightCorner==true){
-          printf("Right Corner");
-          turn_right(100000); //write turn left
-          rightCorner=false;
-          
-  }
-  else if (leftCorner==true){
-          printf("Left Corner");
-          turn_left(100000); //write turn left
-          leftCorner=false;
-  }
-}
-}
- 
  void turn_left(int turn){
 	 set_motor(1,30);
   	 set_motor(2,30);
@@ -121,6 +91,35 @@ void quad3 (){
   	 set_motor(2,30);	
   	 sleep1(0,turn);
  }
+void quad3 (){
+  while (count>5){
+      double propSignal =  getPropSignal();
+      double leftSpeed = (baseSpeed + propSignal)/2;
+      double rightSpeed = (baseSpeed - propSignal)/2;
+
+       set_motor(2, -leftSpeed);
+       set_motor(1, -rightSpeed); 
+  if (TIntersect==true){
+        printf("T Intersection");
+        turn_left(); //write turn left
+        TIntersect=false;
+
+  }
+  else if (rightCorner==true){
+          printf("Right Corner");
+          turn_right(100000); //write turn left
+          rightCorner=false;
+          
+  }
+  else if (leftCorner==true){
+          printf("Left Corner");
+          turn_left(100000); //write turn left
+          leftCorner=false;
+  }
+}
+}
+ 
+
  
 int baseSpeed = 40;                                                                                                                                                                                                                                                            
 int main() {                                                                                                                                                                                                                                                                   
@@ -151,6 +150,5 @@ int main() {
                
        }
 	
-}
 
 
