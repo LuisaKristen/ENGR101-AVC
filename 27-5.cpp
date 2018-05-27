@@ -34,9 +34,11 @@ double updateWhiteThreshold() {
 }                                                                                                                                                                                                                                                                              
                                                                                                                                                                                                                                                                                
 double kp = 0.005;  
+int count;
 
 double getPropSignal() {
         int white[320];
+        count=0;
         take_picture();        
         for (int i = 0; i < 320; i++) {
               white[i] = 0;
@@ -45,6 +47,7 @@ double getPropSignal() {
  
               if (pixel > whiteThreshold) {
                       white[i] = 1;
+                      count++;
               }
       }
       double error = 0;
@@ -52,7 +55,10 @@ double getPropSignal() {
       for (int i = 0; i < 320; i++) {
               error += (i-160)*white[i];
       }
- 
+       if (i==319 && count>280){
+      quad=3;
+       }
+  
       return error * kp;
 }
 
