@@ -83,7 +83,7 @@ void turnLeft() {
         sleep1(0,150000);
       
         set_motor(1,40);
-        set_motor(2,40);
+        set_motor(2,-40);
         sleep1(0,150000);
 
         set_motor(1,0);
@@ -101,7 +101,7 @@ void turnRight() {
         sleep1(0,150000);
       
         set_motor(1,40);
-        set_motor(2,40);
+        set_motor(2,-40);
         sleep1(0,150000);
 
         set_motor(1,0);
