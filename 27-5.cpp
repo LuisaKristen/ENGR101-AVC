@@ -6,7 +6,7 @@ double whiteThreshold = 255;
                                                                                                                                                                                                                                                                                
 void gate1() {                                                                                                                                                                                                                                                                 
         char password[24];                                                                                                                                                                                                                                                     
-        char IP_addr [15] = {'1','3','0','.','1','9','5','.','6','.','1','9','6'}; //Nathan's IP                                                                                                                                                                               
+        char IP_addr [15] = {'1','3','0','.','1','9','5','.','6','.','1','9','6'}; //Gate's IP                                                                                                                                                                               
         char send [24] = {'P','l','e','a','s','e'};                                                                                                                                                                                                                            
         connect_to_server(IP_addr, 1024);                                                                                                                                                                                                                                      
         send_to_server(send);                                                                                                                                                                                                                                                  
@@ -54,7 +54,7 @@ double getPropSignal() {
               }
             if (pixelGreen<whiteThreshold && pixelBlue<whiteThreshold &&pixelRed>whiteThreshold){
             quad=4;
-              printf(Start of Q4);
+              printf("Start of Q4");
             }
       }
       double error = 0;
@@ -109,7 +109,7 @@ void turnRight() {
         sleep1(0,150000);
   
         set_motor(1, -speed);
-        set_motor(1, -(speed+30));
+        set_motor(2, -(speed+30));
         sleep1(0,180000);
 } 
 
