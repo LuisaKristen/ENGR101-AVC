@@ -44,18 +44,25 @@ double getPropSignal() {
               white[i] = 0;
                 
               int pixel = get_pixel(120, i, 3);
- 
+               int pixelGreen= get_pixel(160,120,1);
+               int pixelBlue = get_pixel(160,120,2);
+               int pixelRed=  get_pixel(160,120,0);
+                
               if (pixel > whiteThreshold) {
                       white[i] = 1;
                       count++;
               }
+            if (pixelGreen<whiteThreshold && pixelBlue<whiteThreshold &&pixelRed>whiteThreshold){
+            quad=4;
+              printf(Start of Q4);
+            }
       }
       double error = 0;
         
       for (int i = 0; i < 320; i++) {
               error += (i-160)*white[i];
       }
-       if (i==319 && count>280){
+       if (i==319 && count>220){
       quad=3;
        }
   
@@ -71,15 +78,39 @@ void stopMotors() {
 int speed = 47;
 
 void turnLeft() {
+        set_motor(1,0);
+        set_motor(2,0);
+        sleep1(0,150000);
+      
+        set_motor(1,40);
+        set_motor(2,40);
+        sleep1(0,150000);
+
+        set_motor(1,0);
+        set_motor(2,0);
+        sleep1(0,150000);
+  
         set_motor(1, -(speed+30));
         set_motor(2, speed);
-        sleep1(0,150000);
+        sleep1(0,180000);
 }
 
 void turnRight() {
+       set_motor(1,0);
+        set_motor(2,0);
+        sleep1(0,150000);
+      
+        set_motor(1,40);
+        set_motor(2,40);
+        sleep1(0,150000);
+
+        set_motor(1,0);
+        set_motor(2,0);
+        sleep1(0,150000);
+  
         set_motor(1, -speed);
         set_motor(1, -(speed+30));
-        sleep1(0,150000);
+        sleep1(0,180000);
 } 
 
 int baseSpeed = 40;
@@ -110,6 +141,30 @@ void doQuadThree() {
                         turnRight();
                 }
         }
+}
+
+void doQuadFour(){
+     int adc_reading_0; //front sensor
+
+		adc_reading_0 = read_analog(0);
+		
+		printf("Reading: %d\n", adc_reading_0);
+		
+		while (adc_reading_0<50){
+		    
+		     set_motor(1, -(speed+3));
+              set_motor(2, speed);
+               sleep1(0,150000);
+        
+		}
+	    if (adc_reading_0>50){
+	        set_motor(1, -speed);
+              set_motor(1, -(speed+30));
+              sleep1(1,0);
+	        
+	        
+	    }
+
 }
 
 bool startQuad3 = true;
@@ -151,6 +206,11 @@ int main() {
                 }
                 doQuadThree();
         }
+         
+         else if (quad==4){
+         doQuadFour();
+         
+         }
        }
 }
 
