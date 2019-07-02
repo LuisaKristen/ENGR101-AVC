@@ -1,2 +1,2 @@
 # ENGR101-AVC
-Nathan Wride's epic team of engineering students make a robot.
+ENGR101 Final project. Building and Coding a robot to complete a maze. Team Challenge. 
